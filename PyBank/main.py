@@ -69,6 +69,7 @@ print(f"Greatest Increase In Profits: {dateofincrease}  $({highestincrease})")
 print(f"Greatest Decrease In Profits: {dateofdecrease}  $({highestdecrease})" )
 print(" ' ' '")
 
+#https://matthew-brett.github.io/teaching/string_formatting.html
 numofmonthsstring = " {}".format(numofmonths)
 totalprofitstring = " ${}".format(totalprofit)
 averagestring = " ${}".format(average)
@@ -89,5 +90,3 @@ with open(export_file, "w", newline = '') as analysisfile:
     writer.writerow(["Analysis", " Results"])
 
     writer.writerows(results)
-
-print("pass")
