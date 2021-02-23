@@ -83,4 +83,3 @@ with open(export_file, "w", newline = '') as analysisfile:
     
     writer.writerows(results)
 
-print("pass")
