@@ -68,3 +68,26 @@ for row in range(0,len(changes)):
 print(f"Greatest Increase In Profits: {dateofincrease}  $({highestincrease})")
 print(f"Greatest Decrease In Profits: {dateofdecrease}  $({highestdecrease})" )
 print(" ' ' '")
+
+numofmonthsstring = " {}".format(numofmonths)
+totalprofitstring = " ${}".format(totalprofit)
+averagestring = " ${}".format(average)
+increasestring = " {} ${}".format(dateofincrease, highestincrease) 
+decreasestring = " {} ${}".format(dateofdecrease, highestdecrease) 
+
+analysis = ["Total Months: ", "Total: ", "Average Change: ", 
+            "Greatest Increase in Profits: ", "Greatest Decrease in Profits: "]
+numresults =  [numofmonthsstring, totalprofitstring, averagestring, increasestring, decreasestring]
+
+results = zip(analysis, numresults)
+
+export_file = os.path.join('analysis','analysis.csv')
+
+with open(export_file, "w", newline = '') as analysisfile:
+    writer = csv.writer(analysisfile)
+
+    writer.writerow(["Analysis", " Results"])
+
+    writer.writerows(results)
+
+print("pass")
