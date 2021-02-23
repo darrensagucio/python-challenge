@@ -20,9 +20,6 @@ with open(budget_data_csv, 'r') as csvfile:
         profit.append(row[1])
 
 
-numofmonths = len(date)
-print(f"Total Months: {numofmonths}")
-
 #https://stackoverflow.com/questions/7368789/convert-all-strings-in-a-list-to-int
 profit = [int(i) for i in profit]
 
@@ -37,13 +34,37 @@ for row in range(0,len(profit)):
     else:
         break
 
+print(" ' ' ' text")
+print("Finanical Analysis")
+print("--------------------------")
+
+numofmonths = len(date)
+print(f"Total Months: {numofmonths}")
+
 print(f"Total: ${totalprofit}")
 
 average = sum(changes) / len(changes)
 average = round(average, 2)
 print(f"Average Changes: ${average}")
 
+highestincrease = max(changes)
+highestdecrease = min(changes)
 
-   
+for row in range(0,len(changes)):
+    if changes[row] != highestincrease: 
+        pass 
+    else: 
+        dateofincrease = date[row+1]
+        break
 
-print("pass")
+for row in range(0,len(changes)):
+    if changes[row] != highestdecrease: 
+        pass 
+    else: 
+        dateofdecrease = date[row+1]
+        break
+
+
+print(f"Greatest Increase In Profits: {dateofincrease}  $({highestincrease})")
+print(f"Greatest Decrease In Profits: {dateofdecrease}  $({highestdecrease})" )
+print(" ' ' '")
